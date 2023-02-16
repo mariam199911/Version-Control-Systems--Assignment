@@ -14,6 +14,15 @@ double getAverage(const std::vector<int>& vec) {
     double average = static_cast<double>(sum) / vec.size();
     return average;
 }
+int getMin(const std::vector<int>& vec) {
+    int min = vec[0];
+    for (int i = 1; i < vec.size(); i++) {
+        if (vec[i] < min) {
+            min = vec[i];
+        }
+    }
+    return min;
+}
 
 int main() {
     // create a vector of 10 integers
@@ -30,6 +39,11 @@ int main() {
 
     // print the average to the console
     std::cout << "The average of the vector is: " << average << std::endl;
+    // find the minimum element of the vector
+    int min = getMin(myVec);
+
+    // print the minimum element to the console
+    std::cout << "The minimum element of the vector is: " << min << std::endl;
 
     return 0;
 }
